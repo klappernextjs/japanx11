@@ -173,36 +173,6 @@ const challenges: Challenge[] = [
     totalVolume: 7020
   },
   {
-    id: 11,
-    userA: {
-      username: "CryptoKing",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CryptoKing",
-      isWinning: true
-    },
-    userB: {
-      username: "BlockMaster",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=BlockMaster"
-    },
-    challengePrefix: "XRP hits 1.5",
-    wager: 5000,
-    totalVolume: 10000
-  },
-  {
-    id: 12,
-    userA: {
-      username: "ShibaLord",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ShibaLord"
-    },
-    userB: {
-      username: "DogeMaster",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DogeMaster",
-      isWinning: true
-    },
-    challengePrefix: "SHIB to 0.001",
-    wager: 1500,
-    totalVolume: 3000
-  },
-  {
     id: 13,
     userA: {
       username: "MoonBoy",
@@ -216,21 +186,6 @@ const challenges: Challenge[] = [
     challengePrefix: "ATOM above 15",
     wager: 2500,
     totalVolume: 5000
-  },
-  {
-    id: 14,
-    userA: {
-      username: "ChainMaster",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ChainMaster"
-    },
-    userB: {
-      username: "BlockWizard",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=BlockWizard",
-      isWinning: true
-    },
-    challengePrefix: "NEAR to 5",
-    wager: 3000,
-    totalVolume: 6000
   },
   {
     id: 15,
@@ -280,28 +235,31 @@ export default function Activities() {
             className="grid grid-cols-3 gap-2 px-3 py-2 bg-[#1C1C28] rounded-lg hover:bg-[#1E1E2A] transition-colors text-xs md:text-sm"
           >
             {/* Users Column */}
-            <div className="flex items-center gap-2 min-w-0">
-              <Avatar className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0">
-                <AvatarImage src={challenge.userA.avatar} alt={challenge.userA.username} />
-                <AvatarFallback>{challenge.userA.username[0]}</AvatarFallback>
-              </Avatar>
-              <div className="flex items-center min-w-0 gap-1">
-                <div className="flex items-center gap-1 min-w-0">
-                  <span className="text-orange-400 font-medium">
-                    @<span className="hidden md:inline">{challenge.userA.username}</span>
-                    <span className="inline md:hidden">{truncateUsername(challenge.userA.username)}</span>
-                  </span>
-                  {challenge.userA.isWinning && (
-                    <Trophy className="w-3 h-3 text-yellow-400 flex-shrink-0" />
-                  )}
-                </div>
-                <span className="text-gray-400 mx-0.5 flex-shrink-0">/</span>
-                <span className="text-white">
-                  @<span className="hidden md:inline">{challenge.userB.username}</span>
-                  <span className="inline md:hidden">{truncateUsername(challenge.userB.username)}</span>
-                </span>
-              </div>
-            </div>
+<div className="flex items-center gap-2 min-w-0">
+  <div className="flex -space-x-4 relative"> {/* Increased overlap */}
+    <Avatar className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 border-[1.5px] border-wh relative z-10"> {/* Added z-index */}
+      <AvatarImage src={challenge.userA.avatar} alt={challenge.userA.username} />
+      <AvatarFallback>{challenge.userA.username[0]}</AvatarFallback>
+    </Avatar>
+    <Avatar className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 border-[1.5px] border-wh">
+      <AvatarImage src={challenge.userB.avatar} alt={challenge.userB.username} />
+      <AvatarFallback>{challenge.userB.username[0]}</AvatarFallback>
+    </Avatar>
+  </div>
+  <div className="flex items-center min-w-0 gap-1">
+    <div className="flex items-center gap-1 min-w-0">
+      <span className="text-orange-400 font-medium">
+        <span className="hidden md:inline">{challenge.userA.username}</span>
+        <span className="inline md:hidden">{truncateUsername(challenge.userA.username)}</span>
+      </span>
+    </div>
+    <span className="text-gray-400 mx-0.5 flex-shrink-0">/</span>
+    <span className="text-white">
+      <span className="hidden md:inline">{challenge.userB.username}</span>
+      <span className="inline md:hidden">{truncateUsername(challenge.userB.username)}</span>
+    </span>
+  </div>
+</div>
 
             {/* Challenge Column */}
             <div className="flex items-center text-gray-300 truncate text-xs">
