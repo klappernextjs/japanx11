@@ -1,7 +1,22 @@
+export type NotificationType = 
+  | 'challenge_request'
+  | 'comment'
+  | 'like'
+  | 'share'
+  | 'declined'
+  | 'accepted'
+  | 'won'
+  | 'lost'
+  | 'mentioned'
+  | 'followed'
+  | 'challenge_completed'
+  | 'challenge_started'
+
 export interface Author {
   name: string
   username: string
   isVerified?: boolean
+  avatar?: string
 }
 
 export interface Stats {
@@ -15,11 +30,8 @@ export interface Challenge {
     yes: number
     no: number
   }
-  challengedUser?: {  // Make this optional with ?
-    name: string
-    username: string
-    isVerified?: boolean
-  }
+  challengedUser?: Author  // Using Author interface here
+  challengePrefix?: string
 }
 
 export interface Post {
@@ -30,4 +42,16 @@ export interface Post {
   stats: Stats
   challenge?: Challenge
   mediaUrls?: string[]
+}
+
+export interface Notification {
+  id: number
+  type: NotificationType
+  user: Author
+  challengePrefix?: string
+  timestamp: string
+  amount?: number
+  read: boolean
+  challenge?: Challenge
+  post?: Post
 }
