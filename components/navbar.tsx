@@ -3,12 +3,23 @@
 import Link from "next/link"
 import { MobileNav } from "@/components/mobile-nav"
 import { ConnectWalletDialog } from "@/components/connect-wallet-dialog"
-import { usePathname } from 'next/navigation' // Add this import
+import { usePathname } from 'next/navigation'
+import { Bell } from "lucide-react"
+
+// Add NotificationBadge component inline
+function NotificationBadge({ count }: { count: number }) {
+  if (count === 0) return null;
+  
+  return (
+    <div className="absolute -top-1 -right-1 bg-orange-400 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
+      {count > 9 ? '9+' : count}
+    </div>
+  )
+}
 
 export function Navbar() {
-  const pathname = usePathname() // Add this hook
+  const pathname = usePathname()
 
-  // Helper function to determine if link is active
   const isActive = (path: string) => pathname === path
 
   return (
@@ -30,7 +41,7 @@ export function Navbar() {
                   : 'text-gray-300 hover:text-white'
               }`}
             >
-              Home
+              Explore
             </Link>
             <Link 
               href="/activities" 
@@ -43,24 +54,25 @@ export function Navbar() {
               Activities
             </Link>
             <Link 
-              href="/trending" 
+              href="/leaderboard" 
               className={`${
-                isActive('/trending') 
+                isActive('/leaderboard') 
                   ? 'text-white' 
                   : 'text-gray-300 hover:text-white'
               }`}
             >
-              Trending
+              Leaderboard
             </Link>
             <Link 
-              href="/about" 
-              className={`${
-                isActive('/about') 
+              href="/notifications" 
+              className={`relative ${
+                isActive('/notifications') 
                   ? 'text-white' 
                   : 'text-gray-300 hover:text-white'
               }`}
             >
-              About
+              <Bell className="h-5 w-5" />
+              <NotificationBadge count={3} />
             </Link>
           </div>
         </div>
