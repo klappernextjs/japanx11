@@ -55,3 +55,40 @@ export interface Notification {
   challenge?: Challenge
   post?: Post
 }
+
+export interface LeaderboardEntry {
+  rank: number
+  user: {
+    isVerified: any
+    username: string
+    avatar: string
+    address: string
+  }
+  stats: {
+    percentage: number
+    eth: number
+    points: number
+  }
+  isVerified?: boolean
+}
+
+// Optional: Add more specific leaderboard types
+export interface LeaderboardStats {
+  percentage: number
+  eth: number
+  points: number
+}
+
+export interface LeaderboardUser {
+  username: string
+  avatar: string
+  address: string
+  isVerified?: boolean
+}
+
+// You can use these more specific types in the main interface
+export interface LeaderboardEntryDetailed {
+  rank: number
+  user: LeaderboardUser
+  stats: LeaderboardStats
+}
