@@ -19,17 +19,7 @@ export function MobileNav() {
           }`}
         >
           <Home className="h-5 w-5" />
-          <span className="text-xs mt-1">Home</span>
-        </Link>
-
-        <Link
-          href="/leaderboard"
-          className={`flex flex-col items-center justify-center flex-1 py-2 ${
-            isActive('/leaderboard') ? 'text-white' : 'text-gray-400'
-          }`}
-        >
-          <Trophy className="h-5 w-5" />
-          <span className="text-xs mt-1">Leaderboard</span>
+          <span className="text-xs mt-1">Explore</span>
         </Link>
 
         <Link
@@ -38,8 +28,18 @@ export function MobileNav() {
             isActive('/activities') ? 'text-white' : 'text-gray-400'
           }`}
         >
-          <Activity className="h-5 w-5" />
+          <Trophy className="h-5 w-5" />
           <span className="text-xs mt-1">Activities</span>
+        </Link>
+
+        <Link
+          href="/leaderboard"
+          className={`flex flex-col items-center justify-center flex-1 py-2 ${
+            isActive('/leaderboard') ? 'text-white' : 'text-gray-400'
+          }`}
+        >
+          <Activity className="h-5 w-5" />
+          <span className="text-xs mt-1">Leaderboard</span>
         </Link>
 
         <Link
@@ -49,7 +49,7 @@ export function MobileNav() {
           }`}
         >
           <Info className="h-5 w-5" />
-          <span className="text-xs mt-1">About</span>
+          <span className="text-xs mt-1">Notification</span>
         </Link>
       </div>
     </div>
