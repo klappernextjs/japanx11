@@ -1,47 +1,57 @@
 "use client"
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
-import { Menu, Trophy } from "lucide-react"
+import { Home, Trophy, Activity, Info } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from 'next/navigation'
 
 export function MobileNav() {
+  const pathname = usePathname()
+
+  const isActive = (path: string) => pathname === path
+
   return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
-          <Menu className="h-5 w-5" />
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="left" className="bg-[#121212] border-gray-800">
-        <div className="flex flex-col space-y-4 mt-8">
-          <Link
-            href="/"
-            className="text-gray-300 hover:text-white px-4 py-2 rounded-md hover:bg-gray-800 flex items-center gap-2"
-          >
-            Home
-          </Link>
-          <Link
-            href="/leaderboard"
-            className="text-gray-300 hover:text-white px-4 py-2 rounded-md hover:bg-gray-800 flex items-center gap-2"
-          >
-            <Trophy className="h-4 w-4" />
-            Leaderboard
-          </Link>
-          <Link
-            href="/trending"
-            className="text-gray-300 hover:text-white px-4 py-2 rounded-md hover:bg-gray-800"
-          >
-            Trending
-          </Link>
-          <Link
-            href="/about"
-            className="text-gray-300 hover:text-white px-4 py-2 rounded-md hover:bg-gray-800"
-          >
-            About
-          </Link>
-        </div>
-      </SheetContent>
-    </Sheet>
+    <div className="fixed bottom-0 left-0 right-0 bg-[#121212] border-t border-gray-800 md:hidden">
+      <div className="flex justify-around items-center h-16">
+        <Link
+          href="/"
+          className={`flex flex-col items-center justify-center flex-1 py-2 ${
+            isActive('/') ? 'text-white' : 'text-gray-400'
+          }`}
+        >
+          <Home className="h-5 w-5" />
+          <span className="text-xs mt-1">Home</span>
+        </Link>
+
+        <Link
+          href="/leaderboard"
+          className={`flex flex-col items-center justify-center flex-1 py-2 ${
+            isActive('/leaderboard') ? 'text-white' : 'text-gray-400'
+          }`}
+        >
+          <Trophy className="h-5 w-5" />
+          <span className="text-xs mt-1">Leaderboard</span>
+        </Link>
+
+        <Link
+          href="/activities"
+          className={`flex flex-col items-center justify-center flex-1 py-2 ${
+            isActive('/activities') ? 'text-white' : 'text-gray-400'
+          }`}
+        >
+          <Activity className="h-5 w-5" />
+          <span className="text-xs mt-1">Activities</span>
+        </Link>
+
+        <Link
+          href="/about"
+          className={`flex flex-col items-center justify-center flex-1 py-2 ${
+            isActive('/about') ? 'text-white' : 'text-gray-400'
+          }`}
+        >
+          <Info className="h-5 w-5" />
+          <span className="text-xs mt-1">About</span>
+        </Link>
+      </div>
+    </div>
   )
 }
