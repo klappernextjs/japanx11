@@ -98,6 +98,7 @@ export function CreatePost({ onPostCreated }: CreatePostProps) {
     setShowUserSuggestions(false)
     textareaRef.current?.focus()
   }
+  
 
   const handleSubmit = async () => {
     if (!content.trim() && mediaFiles.length === 0) return
