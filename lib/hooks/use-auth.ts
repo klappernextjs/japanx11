@@ -1,3 +1,5 @@
+"use client"
+
 import { useAccount, useNetwork, useSignMessage } from 'wagmi'
 
 export function useAuth() {

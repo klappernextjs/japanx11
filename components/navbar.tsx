@@ -5,21 +5,80 @@ import { MobileNav } from "@/components/mobile-nav"
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { usePathname } from 'next/navigation'
 import { Bell } from "lucide-react"
+import { SignInButton } from '@farcaster/auth-kit'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Separator } from "@/components/ui/separator"
+import { useFarcasterAuth } from "@/lib/hooks/UseFarcasterAuth"
+import { NotificationBadge } from "./notification-badge"
+function FarcasterButton() {
+  const { isAuthenticated, profile, isLoading } = useFarcasterAuth()
 
-// Add NotificationBadge component inline
-function NotificationBadge({ count }: { count: number }) {
-  if (count === 0) return null;
-  
+  if (isLoading) {
+    return (
+      <div className="animate-pulse flex items-center gap-2">
+        <div className="w-8 h-8 bg-gray-700 rounded-full" />
+        <div className="hidden lg:flex flex-col gap-1">
+          <div className="h-4 w-24 bg-gray-700 rounded" />
+          <div className="h-3 w-16 bg-gray-700 rounded" />
+        </div>
+      </div>
+    )
+  }
+
+  if (isAuthenticated && profile) {
+    return (
+      <div className="flex items-center gap-2">
+        <Avatar className="h-8 w-8">
+          <AvatarImage 
+            src={profile.pfp.url} 
+            alt={profile.username} 
+          />
+          <AvatarFallback>
+            {profile.username[0].toUpperCase()}
+          </AvatarFallback>
+        </Avatar>
+        <div className="hidden lg:flex flex-col">
+          <span className="text-sm font-medium">
+            {profile.displayName}
+          </span>
+          <span className="text-xs text-gray-400">
+            @{profile.username}
+          </span>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="absolute -top-1 -right-1 bg-orange-400 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
-      {count > 9 ? '9+' : count}
+    <div className="flex items-center">
+      <SignInButton />
+      <style jsx global>{`
+        .fc-button {
+          background: #8B5CF6 !important;
+          color: white !important;
+          padding: 0.5rem 1rem !important;
+          border-radius: 0.5rem !important;
+          display: flex !important;
+          align-items: center !important;
+          gap: 0.5rem !important;
+          font-size: 0.875rem !important;
+        }
+        .fc-button:hover {
+          background: #7C3AED !important;
+        }
+        .fc-button::before {
+          content: '';
+          width: 1rem;
+          height: 1rem;
+          background: url('/farcaster-logo.svg') no-repeat center;
+          background-size: contain;
+        }
+      `}</style>
     </div>
   )
 }
-
 export function Navbar() {
   const pathname = usePathname()
-
   const isActive = (path: string) => pathname === path
 
   return (
@@ -76,7 +135,11 @@ export function Navbar() {
             </Link>
           </div>
         </div>
-        <ConnectButton />
+        <div className="flex items-center gap-4">
+          <FarcasterButton />
+          <Separator orientation="vertical" className="h-8" />
+          <ConnectButton />
+        </div>
       </div>
     </nav>
   )
