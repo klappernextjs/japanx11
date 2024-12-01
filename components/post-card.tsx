@@ -195,7 +195,7 @@ export function PostCard(props: PostCardProps) {
                   <Check className="h-4 w-4 mr-1" />
                 </div>
                 <span className="text-green-400">
-                  Yes <span className="text-green-400/60">({challenge.votes.yes})</span>
+                  Yes 
                 </span>
               </Button>
               
@@ -207,7 +207,7 @@ export function PostCard(props: PostCardProps) {
                   <X className="h-4 w-4 mr-1" />
                 </div>
                 <span className="text-red-400">
-                  No <span className="text-red-400/60">({challenge.votes.no})</span>
+                  No
                 </span>
               </Button>
             </div>
@@ -216,11 +216,7 @@ export function PostCard(props: PostCardProps) {
               <div className="flex items-center gap-2">
                 <span className="text-green-400">Active</span>
                 <span className="h-1 w-1 rounded-full bg-gray-600" />
-              
               </div>
-              <button className="text-gray-400 hover:text-purple-400 transition-colors">
-                <Share2 className="h-4 w-4" />
-              </button>
             </div>
           </div>
         )}
