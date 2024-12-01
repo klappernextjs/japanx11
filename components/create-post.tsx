@@ -213,20 +213,18 @@ export function CreatePost({ onPostCreated }: CreatePostProps) {
         </div>
 
         {/* Main Content */}
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           <Avatar className="w-10 h-10 rounded-full bg-[#2D2D3D]" />
           <div className="flex-1 relative">
             <textarea
               ref={textareaRef}
               value={content}
               onChange={handleContentChange}
-              placeholder={`Start typing a new cast here...
-
-To create a challenge:
+              placeholder={`Create a challenge:
 @pepebetsbot challenge @username:
 Event: Your prediction
 Wager: Amount USDT`}
-              className="w-full bg-transparent resize-none outline-none min-h-[100px] text-white placeholder-gray-500 text-lg"
+              className="w-full bg-transparent resize-none outline-none min-h-[100px] text-white placeholder-gray-500 text-sm"
               maxLength={MAX_CHARS}
             />
 
