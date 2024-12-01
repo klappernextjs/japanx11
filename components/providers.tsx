@@ -6,27 +6,24 @@ import {
   darkTheme,
   getDefaultWallets,
 } from '@rainbow-me/rainbowkit'
-import { WagmiConfig, createConfig, http } from 'wagmi'
-import { mainnet, polygon, optimism, arbitrum } from 'viem/chains'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { WagmiConfig, createConfig } from 'wagmi'
+import { mainnet, sepolia, polygon, optimism, arbitrum } from 'wagmi/chains'
+import { createPublicClient, http } from 'viem'
 
-const queryClient = new QueryClient()
+const projectId = "37b5e2fccd46c838885f41186745251e"
 
-const { wallets } = getDefaultWallets({
+const { connectors } = getDefaultWallets({
   appName: 'Polls.bet',
-  projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID!,
-  chains: [mainnet, polygon, optimism, arbitrum],
+  projectId,
+  chains: [mainnet, sepolia, polygon, optimism, arbitrum]
 })
 
 const config = createConfig({
-  chains: [mainnet, polygon, optimism, arbitrum],
-  transports: {
-    [mainnet.id]: http(),
-    [polygon.id]: http(),
-    [optimism.id]: http(),
-    [arbitrum.id]: http(),
-  },
-  ssr: true,
+  connectors,
+  publicClient: createPublicClient({
+    chain: mainnet,
+    transport: http()
+  })
 })
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -35,19 +32,18 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <WagmiConfig config={config}>
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider
-          theme={darkTheme({
-            accentColor: '#8B5CF6', // purple-500
-            accentColorForeground: 'white',
-            borderRadius: 'medium',
-            overlayBlur: 'small',
-          })}
-          modalSize="compact"
-        >
-          {mounted && children}
-        </RainbowKitProvider>
-      </QueryClientProvider>
+      <RainbowKitProvider
+        chains={[mainnet, sepolia, polygon, optimism, arbitrum]}
+        theme={darkTheme({
+          accentColor: '#8B5CF6', // purple-500
+          accentColorForeground: 'white',
+          borderRadius: 'medium',
+          overlayBlur: 'small',
+        })}
+        modalSize="compact"
+      >
+        {mounted && children}
+      </RainbowKitProvider>
     </WagmiConfig>
   )
 }

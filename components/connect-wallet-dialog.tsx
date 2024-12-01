@@ -1,8 +1,11 @@
 "use client"
 
+import '@rainbow-me/rainbowkit/styles.css'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { Button } from "@/components/ui/button"
-import { useAuth } from "@/lib/hooks/use-auth"
+
+type ConnectButtonProps = React.ComponentProps<typeof ConnectButton.Custom>
+type RenderProps = Parameters<ConnectButtonProps["children"]>[0]
 
 export function ConnectWalletDialog() {
   return (
@@ -14,7 +17,7 @@ export function ConnectWalletDialog() {
         openChainModal,
         openConnectModal,
         mounted,
-      }) => {
+      }: RenderProps) => {
         const ready = mounted
         const connected = ready && account && chain
 
@@ -48,7 +51,7 @@ export function ConnectWalletDialog() {
                     variant="outline"
                     className="hidden sm:flex border-purple-500/20 hover:bg-purple-500/10"
                   >
-                    {chain.hasIcon && (
+                    {chain?.hasIcon && (
                       <div className="mr-2 h-4 w-4">
                         {chain.iconUrl && (
                           <img
@@ -59,15 +62,15 @@ export function ConnectWalletDialog() {
                         )}
                       </div>
                     )}
-                    {chain.name}
+                    {chain?.name}
                   </Button>
 
                   <Button 
                     onClick={openAccountModal}
                     className="bg-purple-500 hover:bg-purple-600"
                   >
-                    {account.displayName}
-                    {account.displayBalance
+                    {account?.displayName}
+                    {account?.displayBalance
                       ? ` (${account.displayBalance})`
                       : ''}
                   </Button>

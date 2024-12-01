@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { MobileNav } from "@/components/mobile-nav"
-import { CustomConnectButton } from "@/components/connect-button"
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { usePathname } from 'next/navigation'
 import { Bell } from "lucide-react"
 
@@ -76,7 +76,7 @@ export function Navbar() {
             </Link>
           </div>
         </div>
-        <ConnectWalletDialog />
+        <ConnectButton />
       </div>
     </nav>
   )
