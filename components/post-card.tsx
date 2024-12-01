@@ -67,11 +67,10 @@ export function PostCard(props: PostCardProps) {
                   <BadgeCheck className="h-4 w-4 text-blue-400 flex-shrink-0" />
                 )}
                 <span className="text-purple-400">challenges</span>
-                <span className="text-white font-medium">@{challengeData.challengedUsername}</span>
+                <span className="text-white font-small">@{challengeData.challengedUsername}</span>
                 <span className="text-gray-500 shrink-0">• {timestamp}</span>
               </div>
-              <span className="text-sm text-gray-500">@{author.username}</span>
-            </div>
+                </div>
           </div>
 
           <p className="mb-4 text-white break-words">{challengeData.prediction}</p>
@@ -149,7 +148,7 @@ export function PostCard(props: PostCardProps) {
           </Avatar>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-medium text-white truncate">{author.name}</span>
+              <span className="font-small text-white truncate">{author.name}</span>
               {author.isVerified && (
                 <div className="flex-shrink-0">
                   <BadgeCheck className="h-4 w-4 text-blue-400" />
@@ -158,7 +157,7 @@ export function PostCard(props: PostCardProps) {
               {challenge?.challengedUser && (
                 <>
                   <span className="text-purple-400">challenges</span>
-                  <span className="text-white font-medium">@{challenge.challengedUser.username}</span>
+                  <span className="text-white font-small">@{challenge.challengedUser.username}</span>
                   {challenge.challengedUser.isVerified && (
                     <BadgeCheck className="h-4 w-4 text-blue-400 flex-shrink-0" />
                   )}
@@ -167,12 +166,6 @@ export function PostCard(props: PostCardProps) {
               <span className="text-gray-500 shrink-0">• {timestamp}</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="text-sm text-gray-500 truncate">@{author.username}</span>
-              {author.isVerified && (
-                <div className="flex-shrink-0">
-                  <BadgeCheck className="h-3 w-3 text-blue-400" />
-                </div>
-              )}
             </div>
           </div>
         </div>
