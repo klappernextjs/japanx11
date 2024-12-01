@@ -223,7 +223,7 @@ export function CreatePost({ onPostCreated }: CreatePostProps) {
               placeholder={`Create a challenge:
 @pepebetsbot challenge @username:
 Event: Your prediction
-Wager: Amount USDT`}
+Wager: 100 ETH`}
               className="w-full bg-transparent resize-none outline-none min-h-[100px] text-white placeholder-gray-500 text-sm"
               maxLength={MAX_CHARS}
             />
