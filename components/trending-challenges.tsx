@@ -195,7 +195,7 @@ export default function TrendingChallengesPage() {
               {/* Users Column */}
               <div className="flex items-center gap-2 min-w-0">
                 <div className="flex -space-x-4 relative">
-                  <Avatar className="w-4 h-4 md:w-9 md:h-9 flex-shrink-0 border-[1.3px] border-black relative z-10">
+                  <Avatar className="w-4 h-4 md:w-9 md:h-9 flex-shrink-0 border-[1.3px] border- relative z-10">
                     <AvatarImage src={challenge.userA.avatar} alt={challenge.userA.username} />
                     <AvatarFallback>{truncateUsername(challenge.userA.username)}</AvatarFallback>
                   </Avatar>
