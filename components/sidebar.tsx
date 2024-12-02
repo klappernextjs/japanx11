@@ -3,28 +3,20 @@
 import { Card } from "@/components/ui/card"
 import { Flame } from "lucide-react"
 import Link from "next/link"
+import { Leaderboard } from "@/components/leaderboard"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { ConnectWalletDialog } from "@/components/connect-wallet-dialog"
-import { TrendingChallenges } from "@/components/trending-challenges"
+import TrendingChallenges from "@/components/trending-challenges"  // Default import
 import { QuickLinks } from "@/components/quick-links"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { DollarSign, Trophy } from "lucide-react"
 
 export function Sidebar() {
   return (
     <div className="space-y-6 sticky top-20">
-      <Card className="bg-[#121212] border-gray-800 p-4">
-        <h2 className="text-lg font-semibold mb-2">Welcome to Polls.bet</h2>
-        <p className="text-gray-400 text-sm mb-4">
-          Connect your wallet to start creating challenges and participating in predictions
-        </p>
-        <ConnectWalletDialog />
-      </Card>
-
-      <TrendingChallenges />
-      <QuickLinks />
-
+      <Leaderboard /> {/* Now correctly imported */}
       <div className="text-center text-xs text-gray-500">
-        <p>© 2024 Polls.bet</p>
-        <p>All rights reserved</p>
+        {/* Footer content */}
       </div>
     </div>
   )
