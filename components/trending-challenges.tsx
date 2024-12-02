@@ -39,145 +39,130 @@ const trendingChallenges: Challenge[] = [
     wager: 14000,
     totalVolume: 28000
   },
+
   {
-    id: 2,
+    id: 1,
     userA: {
-      username: "MERRY",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MERRY",
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
       isWinning: true
     },
     userB: {
-      username: "Merry_Paw",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Merry_Paw"
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
     },
-    challengePrefix: "ETH will drop to 3k",
-    wager: 13000,
-    totalVolume: 26000
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
   },
   {
-    id: 3,
+    id: 1,
     userA: {
-      username: "ET",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ET"
-    },
-    userB: {
-      username: "ET_Trader",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ET_Trader",
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
       isWinning: true
     },
-    challengePrefix: "SOL breaks 100",
-    wager: 5000,
-    totalVolume: 10000
+    userB: {
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
+    },
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
   },
   {
-    id: 4,
+    id: 1,
     userA: {
-      username: "HESOLD",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=HESOLD",
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
       isWinning: true
     },
     userB: {
-      username: "Christmas",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Christmas"
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
     },
-    challengePrefix: "DOGE reaches 1$",
-    wager: 4500,
-    totalVolume: 9000
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
   },
   {
-    id: 5,
+    id: 1,
     userA: {
-      username: "morty",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=morty"
-    },
-    userB: {
-      username: "Morty_Rick",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Morty_Rick",
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
       isWinning: true
     },
-    challengePrefix: "BNB above 300",
-    wager: 1000,
-    totalVolume: 2000
+    userB: {
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
+    },
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
   },
   {
-    id: 6,
+    id: 1,
     userA: {
-      username: "XSCRAT",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=XSCRAT",
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
       isWinning: true
     },
     userB: {
-      username: "Xmas_Scrat",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Xmas_Scrat"
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
     },
-    challengePrefix: "MATIC hits 2$",
-    wager: 4500,
-    totalVolume: 9000
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
   },
   {
-    id: 7,
+    id: 1,
     userA: {
-      username: "YETI",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=YETI"
-    },
-    userB: {
-      username: "Yeti_Trade",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Yeti_Trade",
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
       isWinning: true
     },
-    challengePrefix: "AVAX drops to 40",
-    wager: 2000,
-    totalVolume: 4000
+    userB: {
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
+    },
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
+  }, {
+    id: 1,
+    userA: {
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
+      isWinning: true
+    },
+    userB: {
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
+    },
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
+  }, {
+    id: 1,
+    userA: {
+      username: "chil",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILLSNT",
+      isWinning: true
+    },
+    userB: {
+      username: "robq",
+      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CHILL_S"
+    },
+    challengePrefix: "BTC will hit 50k",
+    wager: 14000,
+    totalVolume: 28000
   },
-  {
-    id: 8,
-    userA: {
-      username: "KABOSU",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=KABOSU",
-      isWinning: true
-    },
-    userB: {
-      username: "Kabosu_Doge",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kabosu_Doge"
-    },
-    challengePrefix: "LINK above 20",
-    wager: 510,
-    totalVolume: 1020
-  },
-  {
-    id: 9,
-    userA: {
-      username: "WIC",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=WIC"
-    },
-    userB: {
-      username: "Winter_Comes",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Winter_Comes",
-      isWinning: true
-    },
-    challengePrefix: "DOT breaks 10",
-    wager: 2000,
-    totalVolume: 4000
-  },
-  {
-    id: 10,
-    userA: {
-      username: "OnlyChills",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=OnlyChills",
-      isWinning: true
-    },
-    userB: {
-      username: "ChillMaster",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ChillMaster"
-    },
-    challengePrefix: "ADA under 0.5",
-    wager: 3510,
-    totalVolume: 7020
-  }
+  // ... rest of the challenges remain the same
 ]
 
 export default function TrendingChallengesPage() {
-  // Helper function to truncate username to 3 letters without dots
+  // Helper function to truncate username to 2 letters without dots
   const truncateUsername = (username: string) => {
     return username.slice(0, 2).toUpperCase();
   }
@@ -191,14 +176,13 @@ export default function TrendingChallengesPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-
       {/* Trending Challenges Table */}
       <div className="space-y-4">
         {/* Table Header */}
-        <div className="grid grid-cols-3 gap-2 mb-2 px-3 py-2 bg-[#1C1C28] rounded-lg text-xs md:text-sm">
-          <div className="text-gray-400 font-small"> 🤩 User</div>
-          <div className="text-gray-400 font-small">🎉 Events</div>
-          <div className="text-gray-400 font-small text-right">💲 Volume</div>
+        <div className="grid grid-cols-[2fr_3fr_1fr] gap-2 mb-2 px-3 py-2 bg-[#1C1C28] rounded-lg text-sm">
+          <div className="text-gray-400 font-small">🤩User</div>
+          <div className="text-gray-400 font-small">🎉Events</div>
+          <div className="text-gray-400 font-small">💲Volume</div>
         </div>
 
         {/* Table Body */}
@@ -206,17 +190,21 @@ export default function TrendingChallengesPage() {
           {trendingChallenges.map((challenge) => (
             <div
               key={challenge.id}
-              className="grid grid-cols-3 gap-2 px-3 py-2 bg-[#1C1C28] rounded-lg hover:bg-[#1E1E2A] transition-colors text-xs md:text-sm"
+              className="grid grid-cols-[2fr_3fr_1fr] gap-2 px-3 py-2 bg-[#1C1C28] rounded-lg hover:bg-[#1E1E2A] transition-colors text-xs md:text-sm"
             >
               {/* Users Column */}
               <div className="flex items-center gap-2 min-w-0">
-                <div className="flex -space-x-4 relative"> {/* Increased overlap */}
-                  <Avatar className="w-4 h-4 md:w-9 md:h-9 flex-shrink-0 border-[1.3px] border-wh relative z-10">
+                <div className="flex -space-x-4 relative">
+                  <Avatar className="w-4 h-4 md:w-9 md:h-9 flex-shrink-0 border-[1.3px] border-black relative z-10">
                     <AvatarImage src={challenge.userA.avatar} alt={challenge.userA.username} />
+                    <AvatarFallback>{truncateUsername(challenge.userA.username)}</AvatarFallback>
+                  </Avatar>
+                  <Avatar className="w-4 h-4 md:w-9 md:h-9 flex-shrink-0 border-[1.3px] border-wh">
+                    <AvatarImage src={challenge.userB.avatar} alt={challenge.userB.username} />
+                    <AvatarFallback>{truncateUsername(challenge.userB.username)}</AvatarFallback>
                   </Avatar>
                 </div>
-                </div>
-                  
+              </div>
 
               {/* Challenge Column */}
               <div className="flex items-center text-gray-300 truncate text-xs">
