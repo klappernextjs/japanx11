@@ -215,20 +215,8 @@ export default function TrendingChallengesPage() {
                     <AvatarImage src={challenge.userA.avatar} alt={challenge.userA.username} />
                   </Avatar>
                 </div>
-                <div className="flex items-center min-w-0 gap-1">
-                  <div className="flex items-center gap-1 min-w-0">
-                    <span className="text-orange-400 font-medium">
-                      <span className="hidden md:inline">{challenge.userA.username}</span>
-                      <span className="inline md:hidden">{truncateUsername(challenge.userA.username)}</span>
-                    </span>
-                  </div>
-                  <span className="text-gray-400 mx-0.5 flex-shrink-0">/</span>
-                  <span className="text-white">
-                    <span className="hidden md:inline">{challenge.userB.username}</span>
-                    <span className="inline md:hidden">{truncateUsername(challenge.userB.username)}</span>
-                  </span>
                 </div>
-              </div>
+                  
 
               {/* Challenge Column */}
               <div className="flex items-center text-gray-300 truncate text-xs">
